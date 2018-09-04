@@ -1876,3 +1876,26 @@ div::-webkit-scrollbar-thumb {
     border-radius: 3px;
 }
 
+#left-panel-collapse-button, .left-panel, .maintitle {
+    display: none;
+}
+
+#time {
+    position: absolute;
+    font-family: Catamaran;
+    top: 10px;
+    left: 0;
+    right: 0;
+    /*width: 260px;*/
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 18px;
+    /*background: rgba(0, 0, 0, 0.2);*/
+    border-radius: 3px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 3em;
+    font-weight: bold;
+}
+

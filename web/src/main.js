@@ -292,7 +292,7 @@ d3.select('#checkbox-colorblind').on('change', () => {
 
 // Start initialising map
 try {
-  zoneMap = new ZoneMap('zones', { zoom: 1.5, theme })
+  zoneMap = new ZoneMap('zones', { zoom: 3.5, theme })
     .setCo2color(co2color)
     .onDragEnd(() => {
       // Somehow there is a drag event sent before the map data is loaded.
@@ -502,7 +502,7 @@ function renderMap(state) {
       zoneMap.setCenter(callerLocation);
       hasCenteredMap = true;
     } else {
-      zoneMap.setCenter([0, 50]);
+      zoneMap.setCenter([5, 55]);
     }
   }
 
@@ -573,6 +573,7 @@ function setLastUpdated() {
     .transition()
     .duration(800)
     .style('color', undefined);
+  d3.select('#time').html(currentMoment.format('LL LT'))
 }
 // Re-check every minute
 setInterval(setLastUpdated, 60 * 1000);
@@ -737,6 +738,8 @@ function toggleBright() {
 }
 
 d3.select('.brightmode-button').on('click', toggleBright);
+// HACK:
+toggleBright();
 
 const brightModeButtonTooltip = d3.select('#brightmode-layer-button-tooltip');
 
