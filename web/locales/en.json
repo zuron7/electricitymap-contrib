@@ -7,7 +7,7 @@
         "contribute": "Contribute by <a href=\"%s\" target=\"_blank\">adding your territory</a>"
     },
     "mobile-main-menu": {
-        "map": "Map",
+        "map": "electricityMap",
         "areas": "Areas",
         "about": "About"
     },
@@ -33,7 +33,8 @@
         "carbonintensity": "Carbon Intensity",
         "lowcarbon": "Low-carbon",
         "renewable": "Renewable",
-        "electricity": "Electricity",
+        "electricityproduction": "Electricity production",
+        "electricityconsumption": "Electricity consumption",
         "bysource": "by source",
         "emissions": "Carbon emissions",
         "addeditsource": "<a href=\"%s\" target=\"_blank\">add or edit source</a>",
@@ -51,9 +52,11 @@
     "country-history": {
         "carbonintensity24h": "Carbon intensity in the last 24 hours",
         "emissionsorigin24h": "Origin of emissions in the last 24 hours",
+        "emissionsproduction24h": "Emissions produced in the last 24 hours",
         "electricityorigin24h": "Origin of electricity in the last 24 hours",
+        "electricityproduction24h": "Electricity production in the last 24 hours",
         "electricityprices24h": "Electricity prices in the last 24 hours",
-        "Getdata": "Get historical data and forecast API"
+        "Getdata": "Get historical data, marginal and forecast API"
     },
     "footer": {
         "likethisvisu": "Like the visualization?",
@@ -501,9 +504,21 @@
           "ES": {
             "zoneName": "Spain"
           },
-          "ES-IB": {
+          "ES-IB-FO": {
             "countryName": "Spain",
-            "zoneName": "Balearic Islands"
+            "zoneName": "Formentera"
+          },
+          "ES-IB-IZ": {
+            "countryName": "Spain",
+            "zoneName": "Ibiza"
+          },
+          "ES-IB-MA": {
+            "countryName": "Spain",
+            "zoneName": "Mallorca"
+          },
+          "ES-IB-ME": {
+            "countryName": "Spain",
+            "zoneName": "Menorca"
           },
           "ES-CN-FVLZ": {
             "countryName": "Spain",
@@ -562,6 +577,18 @@
           },
           "GB-NIR": {
             "zoneName": "Northern Ireland"
+          },
+          "GB-ORK": {
+            "countryName": "Great Britain",
+            "zoneName": "Orkney Islands"
+          },
+          "GB-SHI": {
+            "countryName": "Great Britain",
+            "zoneName": "Shetland Islands"
+          },
+          "GB-ZET": {
+            "countryName": "Great Britain",
+            "zoneName": "Shetland Islands"
           },
           "GD": {
             "zoneName": "Grenada"
@@ -794,6 +821,30 @@
           },
           "IT": {
             "zoneName": "Italy"
+          },
+          "IT-CNO": {
+            "countryName": "Italy",
+            "zoneName": "Central North"
+          },
+          "IT-CSO": {
+            "countryName": "Italy",
+            "zoneName": "Central South"
+          },
+          "IT-NO": {
+            "countryName": "Italy",
+            "zoneName": "North"
+          },
+          "IT-SAR": {
+            "countryName": "Italy",
+            "zoneName": "Sardinia"
+          },
+          "IT-SIC": {
+            "countryName": "Italy",
+            "zoneName": "Sicily"
+          },
+          "IT-SO": {
+            "countryName": "Italy",
+            "zoneName": "South"
           },
           "JE": {
             "zoneName": "Jersey"
@@ -1301,6 +1352,10 @@
           "US": {
             "zoneName": "United States of America"
           },
+          "US-AL": {
+            "countryName": "United States of America",
+            "zoneName": "Alabama"
+          },
           "US-BPA": {
             "countryName": "United States of America",
             "zoneName": "BPA"
@@ -1308,6 +1363,10 @@
           "US-CA": {
             "countryName": "United States of America",
             "zoneName": "California"
+          },
+          "US-HI": {
+            "countryName": "United States of America",
+            "zoneName": "Hawaii"
           },
           "US-IPC": {
             "countryName": "United States of America",
@@ -1317,17 +1376,33 @@
             "countryName": "United States of America",
             "zoneName": "MISO"
           },
+          "US-NC": {
+            "countryName": "United States of America",
+            "zoneName": "North Carolina"
+          },
           "US-NEISO": {
             "countryName": "United States of America",
             "zoneName": "New England"
+          },
+          "US-NV": {
+            "countryName": "United States of America",
+            "zoneName": "Nevada"
           },
           "US-NY": {
             "countryName": "United States of America",
             "zoneName": "New York"
           },
+          "US-OR": {
+            "countryName": "United States of America",
+            "zoneName": "Oregon"
+          },
           "US-PJM": {
             "countryName": "United States of America",
             "zoneName": "PJM"
+          },
+          "US-SC": {
+            "countryName": "United States of America",
+            "zoneName": "South Carolina"
           },
           "US-SPP": {
             "countryName": "United States of America",
@@ -1337,8 +1412,13 @@
             "countryName": "United States of America",
             "zoneName": "SVERI"
           },
-          "US-HI": {
-            "zoneName": "Hawaii"
+          "US-TN": {
+            "countryName": "United States of America",
+            "zoneName": "Tennessee"
+          },
+          "US-TX": {
+            "countryName": "United States of America",
+            "zoneName": "Texas"
           },
           "UY": {
             "zoneName": "Uruguay"

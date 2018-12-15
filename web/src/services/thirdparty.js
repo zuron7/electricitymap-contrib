@@ -1,5 +1,7 @@
 const store = require('../store');
 
+const { Sentry } = window;
+
 class ConnectionsService {
   constructor() {
     this.connections = [];
@@ -42,11 +44,18 @@ class ConnectionsService {
   }
 
   // track errors
-  reportError() {
+  reportError(e) {
     if (this._stackdriver !== undefined) {
       try {
         this._stackdriver.report(...arguments);
       } catch(err) {
+        console.error('Error while reporting error: ' + err);
+      }
+    }
+    if (Sentry !== undefined) {
+      try {
+        Sentry.captureException(e);
+      } catch (err) {
         console.error('Error while reporting error: ' + err);
       }
     }

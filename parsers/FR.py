@@ -10,6 +10,8 @@ import pandas as pd
 import requests
 import xml.etree.ElementTree as ET
 
+from .lib.validation import validate, validate_production_diffs
+
 API_ENDPOINT = 'https://opendata.reseaux-energies.fr/api/records/1.0/search/'
 
 MAP_GENERATION = {
@@ -75,7 +77,12 @@ def fetch_production(zone_key='FR', session=None, target_datetime=None,
     for row in df.iterrows():
         production = dict()
         for key, value in MAP_GENERATION.items():
-            production[value] = row[1][key]
+             # Set small negative values to 0
+            if row[1][key] < 0 and row[1][key] > -50:
+                logger.warning('Setting small value of %s (%s) to 0.' % (key, value))
+                production[value] = 0
+            else:
+                production[value] = row[1][key]
 
         # Hydro is a special case!
         production['hydro'] = row[1]['hydraulique_lacs'] + row[1]['hydraulique_fil_eau_eclusee']
@@ -88,13 +95,25 @@ def fetch_production(zone_key='FR', session=None, target_datetime=None,
                     for k, v in production.items()]):
             continue
 
-        datapoints.append({
+        datapoint = {
             'zoneKey': zone_key,
             'datetime': arrow.get(row[1]['date_heure']).datetime,
             'production': production,
             'storage': storage,
             'source': 'opendata.reseaux-energies.fr'
-        })
+        }
+        datapoint = validate(datapoint, logger, required=['nuclear', 'hydro'])
+        datapoints.append(datapoint)
+
+    max_diffs = {
+        'hydro': 1600,
+        'solar': 500,
+        'coal': 500,
+        'wind': 1000,
+        'nuclear': 1300,
+    }
+
+    datapoints = validate_production_diffs(datapoints, max_diffs, logger)
 
     return datapoints
 
