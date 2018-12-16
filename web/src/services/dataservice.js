@@ -75,7 +75,7 @@ var getGfsRefTimeForTarget = exports.getGfsRefTimeForTarget = function(datetime)
     var targetTimeBefore = getGfsTargetTimeBefore(datetime);
     var targetTimeAfter = moment(targetTimeBefore).add(GFS_STEP_HORIZON, 'hour');
     // Note: d3.queue runs tasks in parallel
-    var tryModulo = false;//window.customDate != undefined;
+    var tryModulo = true;
     return d3.queue()
     .defer(fetchForecast, endpoint, key, getGfsRefTimeForTarget(targetTimeBefore), targetTimeBefore, true, tryModulo, false)
     .defer(fetchForecast, endpoint, key, getGfsRefTimeForTarget(targetTimeAfter), targetTimeAfter, true, false, tryModulo)
