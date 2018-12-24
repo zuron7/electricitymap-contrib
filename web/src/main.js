@@ -293,6 +293,7 @@ d3.select('#checkbox-colorblind').on('change', () => {
 // Start initialising map
 try {
   zoneMap = new ZoneMap('zones', { zoom: 3.5, theme })
+  // zoneMap = new ZoneMap('zones', { zoom: 1.8, theme })
     .setCo2color(co2color)
     .onDragEnd(() => {
       // Somehow there is a drag event sent before the map data is loaded.
@@ -497,12 +498,14 @@ function renderMap(state) {
       console.log(`Centering on selectedZoneName ${selectedZoneName}`);
       centerOnZoneName(state, selectedZoneName, 4);
       hasCenteredMap = true;
-    } else if (callerLocation) {
-      console.log('Centering on browser location @', callerLocation);
-      zoneMap.setCenter(callerLocation);
-      hasCenteredMap = true;
+    // } else if (callerLocation) {
+    //   console.log('Centering on browser location @', callerLocation);
+    //   zoneMap.setCenter(callerLocation);
+    //   hasCenteredMap = true;
     } else {
-      zoneMap.setCenter([5, 55]);
+      // For EUROPE we need to record the Danish location..
+      // zoneMap.setCenter([5, 55]);
+      // zoneMap.setCenter([15, 15]);
     }
   }
 
