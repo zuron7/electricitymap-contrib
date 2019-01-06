@@ -5,8 +5,8 @@ const moment = require('moment')
 const start = moment('2018-01-01T00:00:00Z')
 const end = moment('2018-12-31T00:00:00Z')
 
-if (!process.env['ELECTRICITYMAP-TOKEN']) {
-  throw Error('ELECTRICITYMAP-TOKEN env variable is missing.');
+if (!process.env['ELECTRICITYMAPTOKEN']) {
+  throw Error('ELECTRICITYMAPTOKEN env variable is missing.');
 }
 
 async function capture(browser, moment) {
@@ -19,7 +19,7 @@ async function capture(browser, moment) {
   await page.setViewport({ width: 1920, height: 1080 })
   await page.setCookie({
     name: 'electricitymap-token',
-    value: process.env['ELECTRICITYMAP-TOKEN'],
+    value: process.env['ELECTRICITYMAPTOKEN'],
     url: url,
     session: false,
     expires: moment.utc().add(1, 'hour').valueOf()

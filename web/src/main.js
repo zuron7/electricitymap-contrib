@@ -498,10 +498,10 @@ function renderMap(state) {
       console.log(`Centering on selectedZoneName ${selectedZoneName}`);
       centerOnZoneName(state, selectedZoneName, 4);
       hasCenteredMap = true;
-    // } else if (callerLocation) {
-    //   console.log('Centering on browser location @', callerLocation);
-    //   zoneMap.setCenter(callerLocation);
-    //   hasCenteredMap = true;
+    } else if (callerLocation) {
+      console.log('Centering on browser location @', callerLocation);
+      zoneMap.setCenter(callerLocation);
+      hasCenteredMap = true;
     } else {
       // For EUROPE we need to record the Danish location..
       // zoneMap.setCenter([5, 55]);
