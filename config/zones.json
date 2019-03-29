@@ -2444,6 +2444,31 @@
       ]
     ]
   },
+  "KW": {
+    "bounding_box": [
+      [
+        30.7, 
+        45.4
+      ],
+      [
+        27.9,
+        50.1
+      ]
+    ],
+    "capacity": {
+      "gas": 11325,
+      "oil": 3750,
+      "solar": 30.5,
+      "wind": 10
+    },
+    "contributors": [
+      "https://github.com/alixunderplatz"
+    ],
+    "parsers": {
+      "production": "KW.fetch_production"
+    },
+    "timezone": "Asia/Kuwait"
+  },
   "LT": {
     "bounding_box": [
       [
