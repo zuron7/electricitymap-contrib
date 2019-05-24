@@ -357,6 +357,10 @@
           "source": "2017 average by Tomorrow",
           "value": 589.9391089569107
         }
+        "unknown": {
+          "source": "Southern LDC - 20% Nuclear and 80% Thermal"
+          "value": 658.4 
+        }
       },
       "IN-PB": {
         "hydro discharge": {
